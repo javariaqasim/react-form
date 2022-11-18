@@ -9,18 +9,38 @@ function Login() {
   const [password, setPassword] = useState("");
   const [isLoading, setLoader] = useState(false);
   const navigate = useNavigate();
+  let [show,setShow] = useState(false);
 
-  let login = () => {
+  // let login = () => {
+  //   setLoader(true);
+  //   loginUser({
+  //     email,password
+  //   },"users")
+  //     .then((success) => {
+  //       setLoader(false);
+  //       console.log(success);
+  //       navigate("/admin");
+  //     })
+  //     .catch((err) => {
+  //       setLoader(false);
+  //       console.log(err);
+  //     });
+  // };
+
+    let login = () => {
     setLoader(true);
     loginUser({
-      email,
-      password,
-    })
+      email,password
+    },"users")
       .then((success) => {
         setLoader(false);
         console.log(success);
-        navigate("/admin");
-        // navigate(`/${success.id}`);
+        if (success.category=="/studentprofile"){
+          navigate("/studentprofile")
+      }
+      if (success.category=="/admin"){
+        navigate("/admin")
+    }
       })
       .catch((err) => {
         setLoader(false);
@@ -29,14 +49,14 @@ function Login() {
   };
   return (
     <>
-            <Box sx={{ textAlign: "center", marginTop: 2 }}> 
-<Typography variant="p" sx={{fontWeight : "bold", fontSize : "2.6rem", color: "purple",textAlign: "center",textShadow: "4px 3px 1px gray"}} >LOG IN </Typography>
+<Box sx={{ textAlign: "center", marginTop: 2 }}> 
+<Typography variant="p" sx={{fontWeight : "bold", fontSize : "2.6rem", color: "purple",textAlign: "center",textShadow: "4px 3px 1px gray"}} >LOGIN </Typography>
 </Box>
 
 <div className="form">
 <Box sx={{ textAlign: "center" }}>
 
-<Box sx={{ textAlign: "start", marginTop: 2 }}>
+        <Box sx={{ textAlign: "start", marginTop: 2 }}>
         <label className='label'>Email:</label><br />
         <input type="text" className="double"
         onChange={(e)=> setEmail(e.target.value)} sx={{m : 1, width: "90%" }}
@@ -59,10 +79,10 @@ function Login() {
 
                     <br />
                     <Box sx={{ marginTop: 1, textAlign: "center" }}>
-                   <Link style={{textDecoration : 'underline', color: "white"}} to="/">SignUp Account</Link>
+                   <Link style={{textDecoration : 'underline', color: "white"}} to="/signup">SignUp Account</Link>
                    </Box>
 
-</Box>
+                   </Box>
       </div>
     </>
   );

@@ -1,14 +1,62 @@
+:root{
+  --primary: white;
+  --light: purple;
+
+
+}
+
+.bgprimary{
+  color: var(--primary);
+}
+
+.bglight{
+  background-color: var(--light);
+}
+
+
+
+
+
 body{
   text-align: center;
   font-family: "Rowdies", cursive;
 }
 
 
+/* .SMInput:onfocus{
+    outline: none;
+} */
+
+table {
+  font-family: "Rowdies", cursive;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+table td, table th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+table tr:nth-child(even){background-color: gray;}
+
+table tr:hover {background-color: #ddd;}
+
+table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: purple;
+  color: white;
+  font-family: "Rowdies", cursive;
+}
+
 a{
   color: white;
   margin: 5px;
   padding: 5px;
   text-decoration: none;
+  font-family: "Rowdies", cursive;
 }
 
 
@@ -24,19 +72,23 @@ background-position: center;
 border-radius: 25px;
 box-shadow: 10px 10px 10px gray;
 color: white;
+font-family: "Rowdies", cursive;
 }
 
 .form-body{
 text-align: start;
 padding: 20px 10px;
+font-family: "Rowdies", cursive;
 }
 
 .form-body > *{
 padding: 5px;
+font-family: "Rowdies", cursive;
 }
 
 h1{
 font-size: 38px;
+font-family: "Rowdies", cursive;
 }
 
 .double{
@@ -48,7 +100,7 @@ border: none;
 border-radius: 15px;
 background-color: rgb(255, 249, 249);
 color: rgb(10, 10, 10);
-font-family: Arial, Helvetica, sans-serif;
+font-family: "Rowdies", cursive;
 color: gray;
 
 }
@@ -74,7 +126,7 @@ input[type=date] {
   border-radius: 15px;
   background-color: rgb(255, 249, 249);
   color: rgb(10, 10, 10);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Rowdies", cursive;
   }
   
 input[type=password] {
@@ -86,7 +138,7 @@ border: none;
 border-radius: 15px;
 background-color: rgb(255, 249, 249);
 color: rgb(10, 10, 10);
-font-family: Arial, Helvetica, sans-serif;
+font-family: "Rowdies", cursive;
 } 
 
 input[type=submit] {
@@ -99,6 +151,7 @@ input[type=submit] {
   display: inline-block;
   font-size: 22px;
   border-radius: 25px;
+  font-family: "Rowdies", cursive;
 }
 .btn{
 background-color: purple; 
@@ -110,6 +163,7 @@ text-decoration: none;
 display: inline-block;
 font-size: 22px;
 border-radius: 25px;
+font-family: "Rowdies", cursive;
 }
 
 select {
@@ -121,7 +175,7 @@ border: none;
 border-radius: 15px;
 background-color: rgb(255, 255, 255);
 color: rgb(10, 10, 10);
-font-family: Arial, Helvetica, sans-serif;
+font-family: "Rowdies", cursive;
 }
 
 
@@ -132,6 +186,7 @@ border-radius: 15px;
 padding:18px;
 text-align: center;
 box-shadow: 0 8px 6px -6px black;
+font-family: "Rowdies", cursive;
 
 
 
@@ -152,10 +207,12 @@ box-shadow: 0 8px 6px -6px black;
   color: white;
   padding: 8px;
   font-size: 18px;
+  font-family: "Rowdies", cursive;
 }
 
 .footer{
   text-align: center;
+  font-family: "Rowdies", cursive;
 }
 
 

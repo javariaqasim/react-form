@@ -1,9 +1,9 @@
 import { Box, Grid } from "@mui/material";
 import { useEffect, useState } from "react";
-import SMButton from "../components/SMButton";
-import SMSelect from "../components/SMSelect";
-import SMSwitch from "../components/SMSwitch";
-import { getData, sendData } from "../config/firebasemethods";
+import SMButton from "../../components/SMButton";
+import SMSelect from "../../components/SMSelect";
+import SMSwitch from "../../components/SMSwitch";
+import { getData, sendData } from "../../config/firebasemethods";
 
 function CreateResult() {
   const [model, setModel] = useState({});
@@ -11,62 +11,62 @@ function CreateResult() {
   const [resultData, setResultData] = useState([
     {
       name: "ABC",
-      marks: 80,
-      rollNum: "ABC100",
+      marks: 50,
+      rollNum: "1",
+      result: "Pass",
+    },
+    {
+      name: "ABC",
+      marks: 40,
+      rollNum: "2",
+      result: "Pass",
+    },
+    {
+      name: "ABC",
+      marks: 81,
+      rollNum: "3",
+      result: "Pass",
+    },
+    {
+      name: "ABC",
+      marks: 97,
+      rollNum: "4",
+      result: "Pass",
+    },
+    {
+      name: "ABC",
+      marks: 88,
+      rollNum: "5",
       result: "Pass",
     },
     {
       name: "ABC",
       marks: 80,
-      rollNum: "ABC101",
+      rollNum: "6",
       result: "Pass",
     },
     {
       name: "ABC",
-      marks: 80,
-      rollNum: "ABC102",
+      marks: 64,
+      rollNum: "7",
       result: "Pass",
     },
     {
       name: "ABC",
-      marks: 80,
-      rollNum: "ABC103",
+      marks: 60,
+      rollNum: "8",
       result: "Pass",
     },
     {
       name: "ABC",
-      marks: 80,
-      rollNum: "ABC104",
+      marks: 75,
+      rollNum: "9",
       result: "Pass",
     },
     {
       name: "ABC",
-      marks: 80,
-      rollNum: "ABC105",
-      result: "Pass",
-    },
-    {
-      name: "ABC",
-      marks: 80,
-      rollNum: "ABC106",
-      result: "Pass",
-    },
-    {
-      name: "ABC",
-      marks: 80,
-      rollNum: "ABC107",
-      result: "Pass",
-    },
-    {
-      name: "ABC",
-      marks: 80,
-      rollNum: "ABC108",
-      result: "Pass",
-    },
-    {
-      name: "ABC",
-      marks: 80,
-      rollNum: "ABC109",
+      marks: 70,
+      rollNum: "10",
       result: "Pass",
     },
   ]);
@@ -106,7 +106,16 @@ function CreateResult() {
 
   return (
     <>
-      <h1>Create Result</h1>
+            <div>
+            <h1 style={{
+                color: "purple",
+                textAlign: "center",
+                textShadow: "4px 3px 1px gray"
+                
+               }}>CREATE RESULT</h1></div>
+
+{/* <div className="form">
+                <div className="form-body"> */}
       <Box sx={{ padding: 2 }}>
         <Grid container>
           <Grid md={6} item>
@@ -185,6 +194,8 @@ function CreateResult() {
           </table>
         </Box>
       </Box>
+      {/* </div>
+      </div> */}
     </>
   );
 }

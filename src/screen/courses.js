@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+
 import {
   Box,
   CircularProgress,
@@ -39,6 +40,7 @@ function Course() {
   return (
     <>
  {/* <Navbar /> */}
+
                <div>
             <h1 style={{
                 color: "purple",
@@ -75,12 +77,12 @@ function Course() {
             /><br />
 
       
-                <label className='label'>Is Form Open:</label><br /><select className="double" required={true} value={model.isFormOpen} onChange={(e) => fillModel('isFormOpen', e.target.value)} defaultValue="Yes/No">
+                {/* <label className='label'>Is Form Open:</label><br /><select className="double" required={true} value={model.isFormOpen} onChange={(e) => fillModel('isFormOpen', e.target.value)} defaultValue="Yes/No">
                         <option defaultValue>Select Yes/No</option>
                         <option >Yes</option>
                         <option >No</option>
                 
-                    </select><br />
+                    </select><br /> */}
 
                 <label className='label'>No. Of Quiz:</label><br />
 

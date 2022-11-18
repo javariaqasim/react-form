@@ -26,18 +26,15 @@ import AddHomeIcon from '@mui/icons-material/AddHome';
 import PersonIcon from '@mui/icons-material/Person';
 import SupervisorAccountIcon from '@mui/icons-material/SupervisorAccount';
 import { BrowserRouter as Router, Link, Route, Routes, useNavigate } from "react-router-dom";
-import Home from '../screen/home';
+
 import Signup from '../screen/signup';
 import Login from '../screen/login';
 import Students from '../screen/students'
 import Quiz from "../screen/quiz";
 import Courses from "../screen/courses";
 import Result from '../screen/result';
-import Createresult from '../screen/createresult';
-
-
-
-
+import Trainerform from '../screen/trainerform';
+import StudentProfile from '../screen/studentprofile';
 
 
 
@@ -144,46 +141,47 @@ export default function PersistentDrawerLeft() {
                 <Divider />
                 <List>
                     {[
-                        {
-                            route: "home",
-                            name: "Home",
-                            icon: () => <AddHomeIcon />
-                        },
-                        {
-                            route: "signup",
-                            name: "Signup",
-                            icon: () => <PersonIcon />
-                        },
-                        {
-                            route: "login",
-                            name: "Login",
-                            icon: () => <LoginIcon />
-                        },
-                        {
-                            route: "students",
-                            name: "StudentList",
-                            icon: () => <ListAltIcon />
-                        },
-                        {
-                          route: "courses",
-                          name: "courses",
+                    {
+                      route: "courses",
+                      name: "courses",
                           icon: () => <GolfCourseIcon />
-                      },
-                      {
+                    },
+                    {
                         route: "quiz",
                         name: "quiz",
                         icon: () => <QuizIcon />
                     },
                     {
-                        route: "result",
-                        name: "result",
-                        icon: () => <MailIcon />
-                    },
-                    {
-                      route: "Createresult",
-                      name: "Createresult",
+                      route: "result",
+                      name: "result",
                       icon: () => <SupervisorAccountIcon />
                   },
+                  {
+                   route: "studentprofile",
+                   name: "studentprofile",
+                   icon: () => <SupervisorAccountIcon />
+                  },
+                  {
+                    route: "trainerform",
+                    name: "trainerform",
+                    icon: () => <SupervisorAccountIcon />
+                  },
+                  {
+                    route: "signup",
+                    name: "signup",
+                    icon: () => <SupervisorAccountIcon />
+                   },
+                   {
+                    route: "students",
+                    name: "student list",
+                    icon: () => <SupervisorAccountIcon />
+                   },
+                   {
+                     route: "login",
+                     name: "login",
+                     icon: () => <SupervisorAccountIcon />
+                   },
+          
                     ].map((text, index) => (
                         <ListItem key={index} disablePadding>
                             <ListItemButton onClick={() => {
@@ -213,12 +211,7 @@ export default function PersistentDrawerLeft() {
             </Drawer>
             <Main open={open}>
                 <DrawerHeader />
-                <Typography paragraph>
-
-                </Typography>
-                <Typography paragraph>
-
-                </Typography>
+ 
             </Main>
             <Box
                 component="main"
@@ -231,17 +224,23 @@ export default function PersistentDrawerLeft() {
                 <Toolbar />
                 <Box>
                     <Routes>
-                        <Route path="/home" element={<Home />} />
+          
+                       
                         <Route path="/signup" element={<Signup />} />
                         <Route path="/login" element={<Login />} />
                         <Route path="/courses" element={<Courses />} />
                         <Route path="/quiz" element={<Quiz />} />
                         <Route path="/students" element={<Students />} />
-                        <Route path="/createresult" element={<Createresult />} />
                         <Route path="/result" element={<Result />} />
+                        <Route path="/trainerform" element={<Trainerform />} />
+                        <Route path="/studentprofile" element={<StudentProfile />} />
+                     
                     </Routes>
                 </Box>
             </Box>
         </Box>
     );
 }
+
+
+

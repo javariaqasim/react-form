@@ -2,10 +2,6 @@ import Chip from "@mui/material/Chip";
 import { sendData } from "../config/firebasemethods";
 import { Box, Grid, Typography } from "@mui/material";
 import { useState } from "react";
-import SMButton from "../components/SMButton";
-import SMInput from "../components/SMInput";
-import SMSelect from "../components/SMSelect";
-import Checkbox from "@mui/material/Checkbox";
 
 function Quiz() {
   const [isCreateQuiz, setIsCreateQuiz] = useState(false);
@@ -57,24 +53,6 @@ function Quiz() {
     },
   ]);
 
-  // let arr = [
-  //   {
-  //     id: 1,
-  //     display: "abc",
-  //   },
-  //   {
-  //     id: 2,
-  //     display: "abc",
-  //   },
-  //   {
-  //     id: 3,
-  //     display: "abc",
-  //   },
-  // ];
-
-  let createQuiz = () => {
-    setIsCreateQuiz(true);
-  };
 
   let checkQuestion = (a, b) => {
     if (a == b) {
@@ -120,91 +98,8 @@ function Quiz() {
                 textShadow: "4px 3px 1px gray"
                 
                }}>Quiz</h1></div>
-      
-        <Box>
-          <Grid container>
-            <Grid md={6} item>
-              <Box sx={{ padding: 2 }}>
-                <SMInput
-                  onChange={(e) => fillModel("question", e.target.value)}
-                  disabled={isCreateQuiz}
-                  label="Quiz Name"
-                />
-              </Box>
-            </Grid>
-            <Grid md={3} item>
-              <Box sx={{ padding: 2 }}>
-                <SMInput
-                  onChange={(e) => fillModel("duration", e.target.value)}
-                  disabled={isCreateQuiz}
-                  label="Quiz Duration"
-                />
-              </Box>
-            </Grid>
-            <Grid md={3} item>
-              <Box sx={{ padding: 2 }}>
-                <SMSelect
-                  onChange={(e) => fillModel("course", e.target.value)}
-                  disabled={isCreateQuiz}
-                  datasource={[
-                    {
-                      id: "wm",
-                      fullName: "Web And Mobile",
-                    },
-                    {
-                      id: "gd",
-                      fullName: "Graphic Designed",
-                    },
-                  ]}
-                />
-              </Box>
-            </Grid>
-            <Grid md={12} item>
-              <Box>
-                <SMButton onClick={createQuiz} label="Create Quiz" />
-              </Box>
-            </Grid>
-          </Grid>
-          {isCreateQuiz && (
-            <Grid container>
-              <Grid md={12} item>
-                <SMInput
-                  onChange={(e) => {
-                    setQuestion({ ...question, question: e.target.value });
-                  }}
-                  label="Question"
-                />
-              </Grid>
-              <Grid md={12} item>
-                {optionsArr.map((x, i) => (
-                  <>
-                    <Checkbox
-                      onChange={(e) => (x.isChecked = e.target.value)}
-                    />{" "}
-                    <Typography key={i}>{x}</Typography>
-                  </>
-                ))}
-              </Grid>
-              <Grid md={8} item>
-                <SMInput
-                  onChange={(e) => setOption(e.target.value)}
-                  label="Option"
-                />
-              </Grid>
-
-              <Grid md={4} item>
-                <SMButton onClick={addOption} label="add" />
-              </Grid>
-              <Grid md={12} item>
-                <SMButton class="btn" label="Submit Question" />
-                <SMButton label="Lock Quiz" />
-              </Grid>
-            </Grid>
-          )}
-
-
-        </Box>
-      </Box>
+    
+       
       <div className="form">
       <Box>
       <Box sx={{ textAlign: "center", marginTop: 2 }}> 
@@ -225,6 +120,8 @@ function Quiz() {
             {questions[indexNumber].options.map((x, i) => (
               <Grid key={i} item md={6}>
                 <Chip
+               style={{width: "70%", background:"white", borderRadius: "10px", boxSizing:" border-box",
+               border: "none", height: "55px" , margin: "20px" , fontSize: "15px", color: "purple"}}
                   onClick={() =>
                     checkQuestion(x, questions[indexNumber].correctAns)
                   }
@@ -239,6 +136,7 @@ function Quiz() {
         </Box>        
       </Box>
       </div>
+      </Box>
     </>
   );
 }

@@ -7,7 +7,7 @@ function SMButton(props) {
       <Button
         onClick={onClick}
         disabled={disabled}
-        variant={variant ?? "contained"}
+        style={{background: "purple",border: "none", color: "white",padding: "15px 32px",textAlign: "center", textDecoration: "none", display: "inline-block",fontSize: "15px", borderRadius: "25px" , fontFamily: "Rowdies  cursive" }}
       >
         {label}
       </Button>

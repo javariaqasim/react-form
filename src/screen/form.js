@@ -1,10 +1,11 @@
 import {  useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { sendData } from "../config/firebasemethods";
-// import Navbar from '../components/navbar'
+
+import Navbar from "../components/navbar";
 
 
-function Home() {
+function Form() {
   const params = useParams();
   const [txt, setTxt] = useState("");
   const [model, setModel] = useState({});
@@ -63,7 +64,9 @@ function Home() {
 
   return (
     <>
-    {/* <Navbar /> */}
+  
+    <Navbar />
+
                 <div>
             <h1 style={{
                 color: "purple",
@@ -127,4 +130,4 @@ function Home() {
     </>
   );
 }
-export default Home;
+export default Form;

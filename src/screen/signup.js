@@ -18,7 +18,7 @@ function Signup() {
       userName,
       lastname,
       email,
-      password,
+      password
     })
       .then((success) => {
         setLoader(false);
@@ -72,7 +72,7 @@ function Signup() {
         <br />
 
         <Box sx={{textAlign: "center" }}>
-        <Link to="login" style={{textDecoration : 'underline', color: "white"}}> 
+        <Link to="/login" style={{textDecoration : 'underline', color: "white"}}> 
         Already Have An Account</Link>
         </Box>
 
